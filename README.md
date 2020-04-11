@@ -8,4 +8,4 @@ $ docker-compose down
 $ docker-compose up
 ```
 TO-DO:
-  - Fazer o processo acima automáticamente
+  - Automatizar processo de cópia do conf
