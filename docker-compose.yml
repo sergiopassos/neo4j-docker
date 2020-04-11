@@ -1,0 +1,22 @@
+version: '3.1'
+
+services:
+  neo4j:
+    restart: always
+    build:
+      dockerfile: ./docker/neo4j.dockerfile
+      context: .
+    container_name: neo4j-container
+    volumes:
+      - ./volume/neoj/data:/data/databases
+      - ./volume/neoj/conf:/var/lib/neo4j/conf
+      - ./volume/neoj/logs:/logs
+      - ./volume/neoj/import:/var/lib/neo4j/import
+      - ./volume/neoj/plugins:/plugins
+
+    ports:
+      - 7474:7474
+      - 7687:7687
+    
+volumes:
+  neoj:
